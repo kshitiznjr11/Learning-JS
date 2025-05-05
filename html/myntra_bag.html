@@ -8,9 +8,13 @@
 </head>
 <body>
     <main>
-        <button class="bag_btn">Add to Bag</button>
-        <button class="wish_btn">MOVE TO WISHLIST</button>
-        <button class="sale_btn">Add 1+1 sale item</button>
+        <button class="bag_btn" onclick="cartQuantity++;
+        document.querySelector('#cart_summary').innerText = `Your Bag has ${cartQuantity} items!`;">Add to Bag</button>
+        <button class="wish_btn" onclick="cartQuantity--;
+        document.querySelector('#cart_summary').innerText = `Your Bag has ${cartQuantity} items!`;">MOVE TO WISHLIST</button>
+        <button class="bag_btn" onclick="cartQuantity += 2;
+        document.querySelector('#cart_summary').innerText = `Your Bag has ${cartQuantity} items!`;">Add 1+1 sale item</button>
+        <h1 id="cart_summary">Your Bag has 0 items!</h1>
     </main>
     <script src="../scripts/myntra_bag.js"></script>
 </body>
