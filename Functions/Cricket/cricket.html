@@ -10,41 +10,22 @@
     <h1>Bat Ball Stump Game</h1>
     <button onclick="
         let computerChoice = generateComputerChoice();
-        let resultMsg;
-        if (computerChoice === 'Ball') {
-            resultMsg = 'You Won!';
-        } else if (computerChoice === 'Bat') {
-            resultMsg = `It's a tie!`;
-        } else if (computerChoice === 'Stump') {
-            resultMsg = 'Computer Won!';
-        }
-        alert(`You have choosen Bat. Computer choice is ${computerChoice}. ${resultMsg}`);
+        let resultMsg = getResult('Bat', computerChoice);
+        showResult('Bat', computerChoice, resultMsg);
         ">Bat</button>
 
     <button onclick="
         computerChoice = generateComputerChoice();
-        if (computerChoice === 'Ball') {
-            resultMsg = `It's a tie!`;
-        } else if (computerChoice === 'Bat') {
-            resultMsg = 'Computer Won!';
-        } else if (computerChoice === 'Stump') {
-            resultMsg = 'You Won!';
-        }
-        alert(`You have choosen Ball. Computer choice is ${computerChoice}. ${resultMsg}`);
+        resultMsg = getResult('Ball', computerChoice);
+        showResult('Ball', computerChoice, resultMsg);
         ">Ball</button>
 
     <button onclick="
         computerChoice = generateComputerChoice();
-        if (computerChoice === 'Ball') {
-            resultMsg = 'Computer Won!';
-        } else if (computerChoice === 'Bat') {
-            resultMsg = 'You Won!';
-        } else if (computerChoice === 'Stump') {
-            resultMsg = `It's a tie!`;
-        }
-        alert(`You have choosen Stump. Computer choice is ${computerChoice}. ${resultMsg}`);
+        resultMsg = getResult('Stump', computerChoice);
+        showResult('Stump', computerChoice, resultMsg);
         ">Stump</button>
-
+        
         <script src="./cricket.js"></script>
 </body>
 </html>
