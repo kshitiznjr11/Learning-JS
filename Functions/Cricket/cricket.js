@@ -1,3 +1,8 @@
+let score = {
+    win: 0,
+    lost: 0,
+    tie: 0,
+}
 
 function generateComputerChoice () {
     //This will generate random number between 0 and 1
@@ -14,31 +19,44 @@ function generateComputerChoice () {
 function getResult(userMove, computerMove) {
     if (userMove === 'Bat') {
         if (computerMove === 'Ball') {
+            score.win++;
             return 'You Won!';
         } else if (computerMove === 'Bat') {
+            score.tie++;
             return `It's a tie!`;
         } else if (computerMove === 'Stump') {
+            score.lost++;
             return 'Computer Won!';
         }
     } else if (userMove === 'Ball') {
         if (computerMove === 'Ball') {
+            score.tie++;
             return `It's a tie!`;
         } else if (computerMove === 'Bat') {
+            score.lost++;
             return 'Computer Won!';
         } else if (computerMove === 'Stump') {
+            score.win++;
             return 'You Won!';
         }
     } else {
         if (computerMove === 'Ball') {
+            score.lost++;
             return 'Computer Won!';
         } else if (computerMove === 'Bat') {
+            score.win++;
             return 'You Won!';
         } else if (computerMove === 'Stump') {
+            score.tie++;
             return `It's a tie!`;
         }
     }
 }
 
 function showResult(userMove, computerMove, result) {
-    alert(`You have choosen ${userMove}. Computer choice is ${computerMove}. ${result}`);
+    alert(`You have choosen ${userMove}. Computer choice is ${computerMove}
+        
+    ${result}
+    
+    Won:${score.win} Lost:${score.lost} Tie:${score.tie}`);
 }
