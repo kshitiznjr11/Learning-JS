@@ -11,20 +11,26 @@
     <button onclick="
         let computerChoice = generateComputerChoice();
         let resultMsg = getResult('Bat', computerChoice);
-        showResult('Bat', computerChoice, resultMsg);
-        ">Bat</button>
+        showResult('Bat', computerChoice, resultMsg)">Bat
+    </button>
 
     <button onclick="
         computerChoice = generateComputerChoice();
         resultMsg = getResult('Ball', computerChoice);
         showResult('Ball', computerChoice, resultMsg);
-        ">Ball</button>
+        ">Ball
+    </button>
 
     <button onclick="
         computerChoice = generateComputerChoice();
         resultMsg = getResult('Stump', computerChoice);
         showResult('Stump', computerChoice, resultMsg);
-        ">Stump</button>
+        ">Stump
+    </button>
+
+    <button onclick="localStorage.clear()
+        resetScore();">Reset
+    </button>
         
         <script src="./cricket.js"></script>
 </body>

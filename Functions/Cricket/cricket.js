@@ -1,11 +1,18 @@
-let score = {
-    win: 0,
-    lost: 0,
-    tie: 0,
-    displayScore: function () {
+let scoreStr = localStorage.getItem('Score');
+let score;
+resetScore(scoreStr);
+
+function resetScore(scoreStr) {
+        score = scoreStr ? JSON.parse(scoreStr) : {
+        win: 0,
+        lost: 0,
+        tie: 0,
+    };
+
+    score.displayScore = function () {
         return `Number of Matches Won:${score.win} Lost:${score.lost} Tie:${score.tie}`;
-    }
-}
+    };
+};
 
 function generateComputerChoice () {
     //This will generate random number between 0 and 1
@@ -57,7 +64,8 @@ function getResult(userMove, computerMove) {
 }
 
 function showResult(userMove, computerMove, result) {
-    alert(`You have choosen ${userMove}. Computer choice is ${computerMove}
+    localStorage.setItem('Score', JSON.stringify(score));
+    alert(`You have chosen ${userMove}. Computer choice is ${computerMove}
         
     ${result}
     
